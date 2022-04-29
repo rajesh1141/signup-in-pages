@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUpPage</title>
+    <style>
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <h1>Signup</h1>
+    <input type="text" placeholder="enter your email" id="mail">
+    <input type="text" placeholder="enter your phone number" id="phone">
+    <input type="text" placeholder="enter your password" id="pass">
+    <input type="submit">
+</form>
+</body>
+</html>
+<script>
+var form = document.querySelector("form");
+ form.addEventListener("submit",function(){
+     event.preventDefault();
+     var data={
+         userMail:form.mail.value,
+         userNumber:form.phone.value,
+         userpass:form.pass.value,
+
+     }
+     localStorage.setItem("userData",JSON.stringify(data));
+     window.location.href ="login.html";
+ })
+</script>
